@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SisdbModelStoreContainer" CdmEntityContainer="SisdbEntities">
+    <EntitySetMapping Name="Ogrenciler">
+      <EntityTypeMapping TypeName="SisdbModel.Ogrenciler">
+        <MappingFragment StoreEntitySet="Ogrenciler">
+          <ScalarProperty Name="ogr_id" ColumnName="ogr_id" />
+          <ScalarProperty Name="ogr_isim" ColumnName="ogr_isim" />
+          <ScalarProperty Name="ogr_soyisim" ColumnName="ogr_soyisim" />
+          <ScalarProperty Name="ogr_yas" ColumnName="ogr_yas" />
+          <ScalarProperty Name="ogr_dogumtarih" ColumnName="ogr_dogumtarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

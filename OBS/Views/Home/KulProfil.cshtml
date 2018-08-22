@@ -1,0 +1,36 @@
+﻿@using OBS.Models.EntityFrameWork
+@model Kullanıcılar
+@{
+    if (Model.k_seviye=="Ogrenci")
+    {
+        Layout = "~/Views/Shared/_OgrLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>KulProfil</title>
+</head>
+<body>
+    <div class="content" style="display:inline-block; width:85%;">
+        <img src="~/Content/img/foto-mehmet-demirci.jpg" style="display:block; width:25%; height:25%; margin:0 auto;" />
+        <div style="margin:0 auto; width:90%;">
+            @Html.LabelFor(m => m.k_no)
+            @Html.TextBoxFor(m => m.k_no, new { @class = " form-control", @readonly = "readonly", @style = "margin-top:10px;" })
+        </div>
+        <br />
+        <div style="margin:0 auto; width:90%;">
+            @Html.LabelFor(m => m.k_seviye)
+            @Html.TextBoxFor(m => m.k_seviye, new { @class = " form-control", @readonly = "readonly" })
+            
+        </div>
+    </div>
+</body>
+</html>

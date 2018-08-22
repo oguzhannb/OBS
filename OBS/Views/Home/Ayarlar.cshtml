@@ -1,0 +1,43 @@
+﻿@using OBS.Models.EntityFrameWork
+@model Kullanıcılar
+@{
+    if (Model.k_seviye=="Ogrenci")
+    {
+        Layout = "~/Views/Shared/_OgrLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ayarlar</title>
+</head>
+<body>
+    <div class="content" style="display:inline-block; width:85%; ">
+        <img style="display:block; width:25%; height:25%; margin:0 auto;" src="~/Content/img/foto-mehmet-demirci.jpg" alt="mdemirci.jpg" />
+        <form action="/Home/Ayarlar" method="post">
+            <div style="margin:0 auto; width:90%;">
+                @Html.LabelFor(m => m.k_no)
+                @Html.TextBoxFor(m => m.k_no, new { @class = " form-control", @style = "margin-top:10px;" })
+            </div>
+            <br />
+            <div style="margin:0 auto; width:90%;">
+                @Html.LabelFor(m => m.k_seviye)
+                @Html.TextBoxFor(m => m.k_seviye, new { @class = " form-control" })
+            </div>
+            @Html.HiddenFor(m => m.k_sifre)
+            @*<form action="@Url.Action("Ayarlar","Home")" method="post">
+            <input type="submit" value="Go" />
+        </form>*@
+            <button style="margin-top:10px;" type="submit" class="btn btn-primary">Gönder</button>
+        </form>
+    </div>
+</body>
+</html>

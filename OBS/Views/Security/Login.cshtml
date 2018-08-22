@@ -1,0 +1,61 @@
+﻿@model OBS.Models.EntityFrameWork.Kullanıcılar
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Sistem Giriş Ekranı</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link  href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet"  integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="shortcut icon" href="~/Content/img/gaziicon.jpg" />
+</head>
+<body>
+    <style>
+        .html, body {
+            background-image: url(/Content/img/edu.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100%;
+        }
+        
+    </style>
+    <div class="container">
+        <div class="card card-container">
+
+            <img style="display:block;margin:0 auto;" id="profile-img" class="profile-img-card" src="~/Content/img/gazi.png" />
+            <div style="text-align:center ; margin:10px 0; ">
+                <span class="badge badge-primary" style="background-color:#007BFF; font-size:15px;">GİRİŞ EKRANI</span><br />
+                @if (ViewBag.Message != null)
+                {
+                    <span style=" display:block; margin:20px auto; width:40%;" class="alert alert-danger">@ViewBag.Message</span>
+                }
+
+            </div>
+            <div style="text-align:center;" class="form-group">
+                @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+                {
+                    @Html.LabelFor(m => m.k_no, "Kullanıcı No")
+                    @Html.TextBoxFor(m => m.k_no, new { placeholder = "Kullanıcı Adı", @class = "form-control", @style = "width:40%; margin:0 auto;" })
+                    @Html.LabelFor(m => m.k_sifre, "Şifre")
+                    @Html.PasswordFor(m => m.k_sifre, new { placeholder = "Şifre", @class = "form-control", @style = "width:40%; margin:0 auto;" })
+                    
+                    
+                    <label>
+                        @Html.RadioButton("GirisSec","Ogrenci") Öğrenci
+                    </label>
+                    <label>
+                        @Html.RadioButton("GirisSec", "Akademisyen") Akademisyen 
+                    </label>
+
+                    <button style="display:block;margin:10px auto; width:40%;" class="btn btn-success" type="submit">Giriş Yap</button>
+                }
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+</body>
+</html>

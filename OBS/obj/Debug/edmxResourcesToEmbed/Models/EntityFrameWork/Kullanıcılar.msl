@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SisdbModel1StoreContainer" CdmEntityContainer="SisdbEntities1">
+    <EntitySetMapping Name="Kullanıcılar">
+      <EntityTypeMapping TypeName="SisdbModel1.Kullanıcılar">
+        <MappingFragment StoreEntitySet="Kullanıcılar">
+          <ScalarProperty Name="k_no" ColumnName="k_no" />
+          <ScalarProperty Name="k_sifre" ColumnName="k_sifre" />
+          <ScalarProperty Name="k_seviye" ColumnName="k_seviye" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

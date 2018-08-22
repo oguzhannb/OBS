@@ -1,0 +1,58 @@
+﻿@model OBS.Models.EntityFrameWork.Ogrenciler
+
+@{
+    ViewBag.Title = "Kaydet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content" >
+    <div style="width:100%;">
+        <h2 style="text-align:center;">ÖĞRENCİ KAYIT FORMU</h2><hr />
+    </div>
+
+
+    @using (Html.BeginForm("Kaydet", "Ogrenci", FormMethod.Post, new { @style = "width:100%; height: 26%; " }))
+    {
+        <div class="form-group ">
+            @Html.LabelFor(m=>m.ogr_isim)
+            @Html.TextBoxFor(m => m.ogr_isim, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m=>m.ogr_isim)
+        </div>
+        <div class="form-group ">
+            @Html.LabelFor(m => m.ogr_soyisim)           
+            @Html.TextBoxFor(m => m.ogr_soyisim, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ogr_soyisim)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ogr_yas)
+            @if (Model.ogr_yas == 0)
+            {
+                @Html.TextBox("ogr_yas", "",new {@class="form-control" })
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.ogr_yas, new { @class = "form-control" })
+            }
+
+            @Html.ValidationMessageFor(m => m.ogr_yas)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ogr_dogumtarih)
+            @if (Model.ogr_yas == 0)
+            {
+                @Html.TextBox("ogr_dogumtarih", "", new { @class = "form-control" })
+            }
+            else
+            {
+                @Html.TextBoxFor(m => m.ogr_dogumtarih, new { @class = "form-control" })
+
+            }
+            @Html.ValidationMessageFor(m => m.ogr_dogumtarih)
+        </div>
+
+        @Html.HiddenFor(m => m.ogr_id)
+        <div style="width:100%;">
+            <button type="submit" class="btn btn-success">Kaydet</button>
+        </div>
+    }
+</div>

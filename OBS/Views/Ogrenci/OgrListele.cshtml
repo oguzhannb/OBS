@@ -1,0 +1,41 @@
+﻿@using OBS.Models.EntityFrameWork
+@model List<Ogrenciler>
+@{
+    ViewBag.Title = "OgrListele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <table class="table table-bordered content-table">
+        <thead>
+            <tr>
+                <th>Ogrenci Id</th>
+                <th>Ogrenci İsmi</th>
+                <th>Ogrenci Soy-İsmi</th>
+                <th>Ogrenci Yaşı</th>
+                <th>Ogrenci D.Tarihi</th>
+                <th>Bilgi Güncelleme</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var ogrenci in Model)
+            {
+                <tr>
+                    <td>@ogrenci.ogr_id</td>
+                    <td>@ogrenci.ogr_isim</td>
+                    <td>@ogrenci.ogr_soyisim</td>
+                    <td>@ogrenci.ogr_yas</td>
+                    <td>@ogrenci.ogr_dogumtarih.ToString("dd/mm/yyyy")</td>
+                    <td>
+                        <div style="margin:0 auto; display:block; text-align:center;">
+                            <a href="/Ogrenci/OgrGuncelle/@ogrenci.ogr_id" class="btn btn-primary buton ">Güncelle</a>
+                            <a href="/Ogrenci/OgrSil/@ogrenci.ogr_id" class="btn btn-danger buton ">Sil</a>
+                        </div>
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+
